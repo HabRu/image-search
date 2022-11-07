@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <title>Image serch</title>
+</head>
+<body>
+    <h1>Выберите файл</h1>
+    <form method="post" action="/upload" enctype="multipart/form-data">
+        <dl>
+            <p>
+                <input type="file" name="file" class="form-control" autocomplete="off" required>
+            </p>
+        </dl>
+        <p>
+            <input type="submit" value="Найти похожие изображения" class="btn btn-info">
+        </p>
+        <image src="{{ img }}"></image>
+        <section>
+            {% for file in files %}
+            <figure style="float: left; margin-right: 20px; margin-bottom: 20px;">
+                <a href="{{url_for('static', filename=file[0][1])}}" target="_blank"><img src="{{url_for('static', filename=file[0][1])}}" height="300px"></a>
+                <figcaption>{{ "{0:.4f}".format(file[1]) }}</figcaption>
+            </figure>
+            {% endfor %}
+        </section>
+    </form>
+</body>

@@ -1,0 +1,10 @@
+Flask
+jinja2
+itsdangerous
+keras
+numpy
+scipy
+tensorflow
+tensorflow-io
+Pillow
+scikit-learn
